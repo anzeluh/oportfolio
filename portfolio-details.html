@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Portfolio Details - Personal Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Personal
+  * Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <main id="main">
+
+    <!-- ======= Portfolio Details ======= -->
+    <div id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-8">
+            <h2 class="portfolio-title" id="project-title">Project Title</h2>
+            <div class="portfolio-details-content">
+              <img src="" id="project-image" class="img-fluid" alt="project">
+            </div>
+            <a href="index.html#portfolio" class="btn btn-primary mt-3"><i class="bi bi-arrow-left"></i> Back</a>
+          </div>
+
+          <div class="col-lg-4 portfolio-info">
+            <h3>Project information</h3>
+            <ul>
+              <li><strong>Category</strong>: <span id="project-category"></span></li>
+              <li><strong>Project date</strong>: <span id="project-date"></span></li>
+              <li><strong>Project URL</strong>: <a href="#" id="project-url">View Project</a></li>
+            </ul>
+            <p id="project-description"></p>
+          </div>
+
+        </div>
+
+      </div>
+    </div><!-- End Portfolio Details -->
+
+  </main><!-- End #main -->
+
+  <div class="credits">
+    Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const projectData = {
+        "log-in": {
+          title: "Log In Project",
+          image: "assets/img/portfolio/log-in.png",
+          category: "Java Application",
+          date: "2024",
+          url: "https://drive.google.com/file/d/1O_F4roO-QLgN2mjJHbIhcPFXF3YyJU3Q/view?usp=sharing",
+          description: "This is a log in project implemented in Java language and later on turned into a web application. When logged in, it will redirect to three buttons with functionalities: horoscope, number guessing game, and unscramble words."
+        },
+        "abtme": {
+          title: "About Me",
+          image: "assets/img/portfolio/abtme.png",
+          category: "Web App",
+          date: "2024",
+          url: "https://drive.google.com/drive/folders/1OkdPUuP8AFmdjLxW2NucJTnqCumqb5x_?usp=drive_link",
+          description: "This is a web application about myself, this is made on html with css and javascript."
+        },
+        "hrbk": {
+          title: "House Rental Booking System",
+          image: "assets/img/portfolio/hrbk.png",
+          category: "System",
+          date: "2023",
+          url: "https://drive.google.com/file/d/1SaeflL-RUcSImCKPoAfuzuonrzOmzDcM/view?usp=drive_link",
+          description: "This is a house rental booking system implemented in C language. Key features include house details and pricing input by property owners, searching and viewing of reservations and record details for property owners and tenants, finding and booking available properties and finally deletion of records which is classified only for management access."
+        },
+        "budgetpal": {
+          title: "BudgetPal",
+          image: "assets/img/portfolio/budget.png",
+          category: "Web Application",
+          date: "2024",
+          url: "https://drive.google.com/drive/folders/1hWr7rar01QB-j817-Vma1JxvRlrGYkXa?usp=sharing",
+          description: "This is a web application named BudgetPal. For backend I used Java and for frontend html, css and javascript. The key features of this app includes budget setting, expense log and tracking, remaining balance viewing, reminders for upcoming bills setting."
+        }
+      };
+
+      const hash = window.location.hash.substring(1);
+      if (projectData[hash]) {
+        document.getElementById('project-title').innerText = projectData[hash].title;
+        document.getElementById('project-image').src = projectData[hash].image;
+        document.getElementById('project-category').innerText = projectData[hash].category;
+        document.getElementById('project-date').innerText = projectData[hash].date;
+        document.getElementById('project-url').href = projectData[hash].url;
+        document.getElementById('project-description').innerText = projectData[hash].description;
+      }
+    });
+  </script>
+
+</body>
+
+</html>
